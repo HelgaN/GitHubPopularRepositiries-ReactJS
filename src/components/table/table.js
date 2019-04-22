@@ -6,7 +6,8 @@ import UpdateFilter from "./filter-update/filter-update";
 import {
   createUniqueList,
   sortByNewest,
-  sortByOldest
+  sortByOldest,
+  searchActiveEl
 } from "../../tools/tools";
 import Button from "./button/button";
 
@@ -26,6 +27,7 @@ class Table extends Component {
   langClickHandler = (evt) => {
     evt.preventDefault();
     const langList = document.getElementById("lang");
+    const updateList = document.getElementById("update");
     const langLinks = langList.querySelectorAll(".dropdown-item");
     langLinks.forEach((link) => link.classList.remove("active"));
     evt.target.classList.add("active");
@@ -42,6 +44,14 @@ class Table extends Component {
     } : dataFilter = {
       items: this.state.data.items
     }
+
+    const activeUpdate = searchActiveEl(updateList) || undefined;
+
+    if(activeUpdate) {
+      if(activeUpdate.innerText === "newest") dataFilter.items = sortByNewest(dataFilter.items);
+      if(activeUpdate.innerText === "oldest") dataFilter.items = sortByOldest(dataFilter.items);
+    }
+
     this.setState({
       dataFilter: dataFilter
     })
