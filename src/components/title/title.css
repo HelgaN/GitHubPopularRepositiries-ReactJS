@@ -1,0 +1,27 @@
+.title {
+  position: relative;
+  padding: 0 10%;
+  text-align: center;
+}
+
+.title:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 3%;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("./../../img/star.svg");
+  background-size: contain;
+}
+
+.title:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 3%;
+  width: 5rem;
+  height: 5rem;
+  background-image: url("./../../img/star.svg");
+  background-size: contain;
+}

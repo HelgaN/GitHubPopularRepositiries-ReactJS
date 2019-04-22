@@ -1,0 +1,23 @@
+.dropdown-menu {
+  position: absolute;
+  will-change: transform;
+  top: 0px;
+  left: 0px;
+  transform: translate3d(0px, 40px, 0px);
+}
+
+.table thead th {
+  vertical-align: baseline;
+}
+
+.th-button {
+  text-align: right;
+}
+
+.avatar {
+  width: 25px;
+}
+
+.table-wrapper {
+  min-height: 600px;
+}
